@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPORT GAMER PANEL</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif;padding:20px}
+header{text-align:center;color:#ff3030;font-size:27px;font-weight:bold;margin:15px 0}
+.sub{text-align:center;color:#aaa;margin-bottom:25px}
+.card{background:#191919;border:1px solid #383838;border-radius:14px;padding:16px;margin:15px 0}
+h3{color:#ff4545;margin-top:0}
+button{background:#d91e2b;color:white;border:0;border-radius:9px;padding:12px;width:100%;font-size:16px;margin:7px 0}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #333}
+input[type=range]{width:100%;accent-color:#ff3030}
+input[type=checkbox]{width:22px;height:22px;accent-color:red}
+.value{color:#ff5555}
+small{color:#aaa}
+</style>
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#d91e2b"></head>
+<body>
+<header>SPORT GAMER PANEL</header>
+<div class="sub">GAMING DASHBOARD V2.0</div>
+
+<div class="card">
+<h3>GAME LAUNCHER</h3>
+<button onclick="openGame('com.dts.freefireth')">FREE FIRE</button>
+<button onclick="openGame('com.dts.freefiremax')">FREE FIRE MAX</button>
+<small>अगर गेम इंस्टॉल नहीं है या लॉन्च नहीं होता, तो उसे अपने आधिकारिक ऐप स्टोर से खोलो।</small>
+</div>
+
+<div class="card">
+<h3>SENSITIVITY GUIDE</h3>
+<div id="sliders"></div>
+<button onclick="saveSettings()">SAVE SENSITIVITY</button>
+<small>ये वैल्यू केवल इस डैशबोर्ड में सेव होंगी। गेम की सेटिंग अपने आप नहीं बदलेंगी।</small>
+</div>
+
+<div class="card">
+<h3>DEMO SWITCHES</h3>
+<div class="row">ES Demo <input type="checkbox" onchange="status(this,'ES')"></div>
+<div class="row">AIM Demo <input type="checkbox" onchange="status(this,'AIM')"></div>
+<div class="row">FL Demo <input type="checkbox" onchange="status(this,'FL')"></div>
+<div class="row">MACRO Demo <input type="checkbox" onchange="status(this,'MACRO')"></div>
+<p id="status">Status: Ready</p>
+<small>ये केवल दिखाने वाले डेमो स्विच हैं।</small>
+</div>
+
+<script>
+const names=['General','Red Dot','2X Scope','4X Scope','Sniper Scope','Free Look'];
+const box=document.getElementById('sliders');
+names.forEach((name,i)=>{
+ let saved=localStorage.getItem('sens'+i)||'100';
+ box.innerHTML+=`<p>${name}: <b class="value" id="v${i}">${saved}</b></p>
+ <input type="range" min="0" max="200" value="${saved}" id="s${i}"
+ oninput="document.getElementById('v${i}').textContent=this.value">`;
+});
+function saveSettings(){
+ names.forEach((n,i)=>localStorage.setItem('sens'+i,document.getElementById('s'+i).value));
+ alert('Sensitivity guide saved!');
+}
+function status(el,name){
+ document.getElementById('status').textContent=
+ name+' Demo: '+(el.checked?'ON':'OFF');
+}
+function openGame(pkg){
+ window.location.href='intent://#Intent;scheme=freefire;package='+pkg+';end';
+}
+</script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js");}</script></body>
+</html>

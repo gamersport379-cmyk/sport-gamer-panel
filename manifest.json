@@ -1,0 +1,8 @@
+{
+  "name": "SPORT GAMER PANEL",
+  "short_name": "SPORT GAMER",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#d91e2b"
+}
