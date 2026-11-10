@@ -1,4 +1,22 @@
-{
+  "background_color": "#090909",
+  "theme_color": "#d91e2b",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./app-screenshot.png",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "SPORT GAMER PANEL screenshot"
+    }
+  ]
+}{
   "id": "/sport-gamer-panel/",
   "name": "SPORT GAMER PANEL",
   "short_name": "SPORT GAMER",
