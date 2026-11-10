@@ -1,24 +1,4 @@
-"icons": [
-  {
-    "src": "icon.png",
-    "sizes": "512x512",
-    "type": "image/png",
-    "purpose": "any"
-  }
-]"icons": [
-  {
-    "src": "icon-square.png",
-    "sizes": "512x512",
-    "type": "image/png",
-    "purpose": "any"
-  },
-  {
-    "src": "icon.png",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "any"
-  }
-]{
+{
   "name": "SPORT GAMER PANEL",
   "short_name": "SPORT GAMER",
   "description": "SPORT GAMER PANEL is a gaming application for gamers.",
@@ -29,7 +9,7 @@
   "icons": [
     {
       "src": "icon.png",
-      "sizes": "192x192",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
