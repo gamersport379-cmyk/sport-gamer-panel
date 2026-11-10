@@ -1,4 +1,22 @@
 {
+  "id": "/sport-gamer-panel/",
+  "name": "SPORT GAMER PANEL",
+  "short_name": "SPORT GAMER",
+  "description": "SPORT GAMER PANEL is a gaming application for gamers.",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090909",
+  "theme_color": "#d91e2b",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}{
   "name": "SPORT GAMER PANEL",
   "short_name": "SPORT GAMER",
   "description": "SPORT GAMER PANEL is a gaming application for gamers.",
